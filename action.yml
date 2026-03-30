@@ -7,10 +7,14 @@ inputs:
   path:
     description: 'The file or folder to be cached'
     required: true
+  strategy:
+    description: 'Caching mechanism to be used'
+    required: false
+    default: 'move'
 outputs:
   cache-hit:
     description: 'A boolean value to indicate if cache was found and restored'
 runs:
-  using: 'node12'
-  main: 'dist/main/index.js'
-  post: 'dist/post/index.js'
+  using: 'node16'
+  main: 'dist/main.js'
+  post: 'dist/post.js'
